@@ -1,0 +1,25 @@
+{
+  "name": "ufc",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--env-file", ".devcontainer/.env"],
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "hashicorp.terraform",
+        "hashicorp.hcl",
+        "mechatroner.rainbow-csv",
+        "innoverio.vscode-dbt-power-user"
+      ]
+    }
+  }
+}
