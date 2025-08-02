@@ -1,0 +1,104 @@
+# UFC Scraping Configuration
+
+# URLs
+ufc_stats:
+  completed_events_url: "http://ufcstats.com/statistics/events/completed?page=all"
+  fighter_index_url: "http://ufcstats.com/statistics/fighters?char={letter}&page=all"
+
+betmma:
+  all_events_url: "https://www.betmma.tips/past_mma_handicapper_performance_all.php?Org=1"
+
+# Output paths
+output:
+  event_details_file: "./data/event_details.csv"
+  fight_details_file: "./data/fight_details.csv"
+  fight_results_file: "./data/fight_results.csv"
+  fight_stats_file: "./data/fight_stats.csv"
+  fighters_file: "./data/fighters_raw.csv"
+  odds_file: "./data/odds_raw.csv"
+
+# Scraping settings
+scraping:
+  sleep_min: 2
+  sleep_max: 4
+  continue_on_error: true
+  headers:
+    User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+    Accept-Language: "en-US,en;q=0.9"
+    Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    Connection: "keep-alive"
+
+# Logging settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# AWS settings (for Lambda deployment)
+aws:
+  s3_bucket: "ufc-scraped-data"
+
+# Column names for data extraction
+column_names:
+  fight_details:
+    - EVENT
+    - BOUT
+    - URL
+
+  fight_results:
+    - EVENT
+    - BOUT
+    - OUTCOME
+    - WEIGHTCLASS
+    - METHOD
+    - ROUND
+    - TIME
+    - TIME FORMAT
+    - REFEREE
+    - DETAILS
+    - URL
+
+  totals:
+    - ROUND
+    - FIGHTER
+    - KD
+    - SIG.STR.
+    - SIG.STR. %
+    - TOTAL STR.
+    - TD
+    - TD %
+    - SUB.ATT
+    - REV.
+    - CTRL
+
+  significant_strikes:
+    - ROUND
+    - FIGHTER
+    - SIG.STR.
+    - SIG.STR. %
+    - HEAD
+    - BODY
+    - LEG
+    - DISTANCE
+    - CLINCH
+    - GROUND
+
+  fight_stats:
+    - EVENT
+    - BOUT
+    - ROUND
+    - FIGHTER
+    - KD
+    - SIG.STR.
+    - SIG.STR. %
+    - TOTAL STR.
+    - TD
+    - TD %
+    - SUB.ATT
+    - REV.
+    - CTRL
+    - HEAD
+    - BODY
+    - LEG
+    - DISTANCE
+    - CLINCH
+    - GROUND

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFC Fight Analytics - ホーム</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <strong>UFC Fight Analytics</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">イベント</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fighters.html">ファイター</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="odds.html">オッズ分析</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stats.html">統計</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="hero-section bg-dark text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="display-4 fw-bold">UFC Fight Analytics</h1>
+                <p class="lead">UFCの試合データ、オッズ、統計を分析・可視化</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <p class="mb-1">総イベント数: <strong>740</strong></p>
+                <p class="mb-1">総試合数: <strong>8239</strong></p>
+                <p class="mb-0">最新イベント: <strong>UFC 318: Holloway vs. Poirier 3</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <!-- サマリーカード -->
+    <div class="row mb-5">
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">イベント数</h5>
+                    <h2 class="text-primary">740</h2>
+                    <p class="text-muted">記録されたイベント</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">試合数</h5>
+                    <h2 class="text-success">8239</h2>
+                    <p class="text-muted">分析済み試合</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">ファイター数</h5>
+                    <h2 class="text-info">2624</h2>
+                    <p class="text-muted">登録ファイター</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title">オッズ予測精度</h5>
+                    <h2 class="text-warning">66.9%</h2>
+                    <p class="text-muted">お気に入りの勝率</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 最近のイベント -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="mb-4">最近のイベント</h2>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>日付</th>
+                            <th>イベント名</th>
+                            <th>場所</th>
+                            <th>試合数</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>July 19, 2025</td>
+                            <td><strong>UFC 318: Holloway vs. Poirier 3</strong></td>
+                            <td>New Orleans, Louisiana, USA</td>
+                            <td>14</td>
+                            <td>
+                                <a href="event_detail.html?id=0" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>July 12, 2025</td>
+                            <td><strong>UFC Fight Night: Lewis vs. Teixeira</strong></td>
+                            <td>Nashville, Tennessee, USA</td>
+                            <td>12</td>
+                            <td>
+                                <a href="event_detail.html?id=1" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>June 28, 2025</td>
+                            <td><strong>UFC 317: Topuria vs. Oliveira</strong></td>
+                            <td>Las Vegas, Nevada, USA</td>
+                            <td>11</td>
+                            <td>
+                                <a href="event_detail.html?id=2" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>June 21, 2025</td>
+                            <td><strong>UFC Fight Night: Hill vs. Rountree Jr.</strong></td>
+                            <td>Baku, Azerbaijan</td>
+                            <td>12</td>
+                            <td>
+                                <a href="event_detail.html?id=3" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>June 14, 2025</td>
+                            <td><strong>UFC Fight Night: Usman vs. Buckley</strong></td>
+                            <td>Atlanta, Georgia, USA</td>
+                            <td>13</td>
+                            <td>
+                                <a href="event_detail.html?id=4" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>June 07, 2025</td>
+                            <td><strong>UFC 316: Dvalishvili vs. O'Malley 2</strong></td>
+                            <td>Newark, New Jersey, USA</td>
+                            <td>13</td>
+                            <td>
+                                <a href="event_detail.html?id=5" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>May 31, 2025</td>
+                            <td><strong>UFC Fight Night: Blanchfield vs. Barber</strong></td>
+                            <td>Las Vegas, Nevada, USA</td>
+                            <td>9</td>
+                            <td>
+                                <a href="event_detail.html?id=6" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>May 17, 2025</td>
+                            <td><strong>UFC Fight Night: Burns vs. Morales</strong></td>
+                            <td>Las Vegas, Nevada, USA</td>
+                            <td>11</td>
+                            <td>
+                                <a href="event_detail.html?id=7" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>May 10, 2025</td>
+                            <td><strong>UFC 315: Muhammad vs. Della Maddalena</strong></td>
+                            <td>Montreal, Quebec, Canada</td>
+                            <td>12</td>
+                            <td>
+                                <a href="event_detail.html?id=8" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>May 03, 2025</td>
+                            <td><strong>UFC Fight Night: Sandhagen vs. Figueiredo</strong></td>
+                            <td>Des Moines, Iowa, USA</td>
+                            <td>12</td>
+                            <td>
+                                <a href="event_detail.html?id=9" class="btn btn-sm btn-outline-primary">詳細</a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- チャート -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">終了方法の分布</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="finishMethodChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">階級別試合数</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="weightClassChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- オッズ分析プレビュー -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="mb-4">オッズ分析ハイライト</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>最大アップセット</h6>
+                            <p class="mb-1"><strong>Michael Johnson</strong> def. Daniel Zellhuber</p>
+                            <small class="text-muted">オッズ: 7.00</small>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>最も正確な予測</h6>
+                            <p class="mb-1"><strong>N/A</strong> def. N/A</p>
+                            <small class="text-muted">オッズ: N/A</small>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>平均ブックメーカーマージン</h6>
+                            <p class="mb-1"><strong>1.85%</strong></p>
+                            <small class="text-muted">全試合平均</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// チャートデータ
+const finishMethodData = "{\"labels\": [\"Decision\", \"KO/TKO\", \"Submission\", \"Other\"], \"values\": [3837, 2677, 1606, 106]}";
+const weightClassData = "{\"labels\": [\"Lightweight Bout\", \"Welterweight Bout\", \"Middleweight Bout\", \"Featherweight Bout\", \"Bantamweight Bout\", \"Heavyweight Bout\", \"Light Heavyweight Bout\", \"Flyweight Bout\", \"Women\u0027s Strawweight Bout\", \"Women\u0027s Flyweight Bout\"], \"values\": [1343, 1282, 1022, 774, 698, 674, 661, 354, 322, 242]}";
+</script>
+
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">UFC Fight Analytics &copy; 2025</p>
+            <small>データ更新日: <span id="update-date">2025年08月02日</span></small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    
+<script src="js/charts.js"></script>
+
+</body>
+</html>
