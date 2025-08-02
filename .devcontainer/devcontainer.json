@@ -15,10 +15,7 @@
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "hashicorp.terraform",
-        "hashicorp.hcl",
-        "mechatroner.rainbow-csv",
-        "innoverio.vscode-dbt-power-user"
+        "mechatroner.rainbow-csv"
       ]
     }
   }
